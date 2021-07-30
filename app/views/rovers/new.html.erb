@@ -1,0 +1,44 @@
+<div class="card p-6 m-6">
+<h2>Register New Rover</h2>
+<br>
+<%= form_with scope: :rover, url: rovers_path, method: :post, local: true do |f| %>
+
+  <div class="field">
+  <label class="label">Name:</label>
+  <div class="control has-icons-left has-icons-right">
+      <%= f.text_area :name, class: "input is-danger"%>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Organisation:</label>
+  <div class="control has-icons-left has-icons-right">
+    <%= f.text_area :org, autocomplete: "new-password" , class: "input is-success"%>
+  </div>
+</div>
+
+<br>
+<h2>Plateau Informatioin:</h2>
+<br>
+
+<div class="field">
+  <label class="label">Plateau X Axis:</label>
+  <div class="control has-icons-left has-icons-right">
+    <%= f.number_field :plateau_x_axis , in: 1.0..20.0, step: 0.5 , class: "input is-success"%>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Plateau Y Axis:</label>
+  <div class="control has-icons-left has-icons-right">
+    <%= f.number_field :plateau_y_axis , in: 1.0..20.0, step: 0.5 , class: "input is-success"%>
+  </div>
+</div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+
+</div>

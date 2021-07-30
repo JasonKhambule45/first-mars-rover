@@ -1,0 +1,35 @@
+<div class="card p-6 m-6">
+
+<h1><%= @rover.name %></h1>
+<br>
+<%- if @rover.crashed? %>
+  <h1>Current Location:</h1>
+  <h1><%= @rover.y_axis %>,<%= @rover.x_axis %>,<%= @rover.direction %></h1>
+<%end%>
+
+<br>
+<br>
+
+<%- if @rover.crashed? %>
+  <h1>Rover has Crashed!</h1>
+<%end%>
+<br>
+
+<%- if @rover.crashed?%>
+  <%= form_with url: instruction_path, method: :instruction, local: true do |f| %>
+
+<div class="field">
+  <label class="label">Instruct Movement:</label>
+  <div class="control has-icons-left has-icons-right">
+    <%= f.text_area :instruction, autocomplete: "new-password" , class: "input is-success"%>
+    <%= f.hidden_field :id, :value => @rover.id %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+</div>
+
+<% end %>
+</div>
+<%end%>
