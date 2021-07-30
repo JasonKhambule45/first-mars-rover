@@ -1,24 +1,28 @@
-# README
+### MARS ROVER PROBLEM
+https://code.google.com/archive/p/marsrovertechchallenge/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Stack:
 
-Things you may want to cover:
+  * Ruby (2.6.6)
+  * Rails (5.2.6)
+  * Rspec
+  * Postgresql as the chosen Database
 
-* Ruby version
+## Development
 
-* System dependencies
+### Running the application
+*Install dependencies:*
+`bundle install`
 
-* Configuration
+*Setup Database:*
+`bundle exec rails db:setup`
+`bundle exec rails db:seed`
 
-* Database creation
+*Start Rails server:*
+`bundle exec rails s`
 
-* Database initialization
+Now you can visit [`localhost:3000`](http://localhost:3000) from your browser.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Tests
+To run your specs:
+  * `bundle exec rspec`
